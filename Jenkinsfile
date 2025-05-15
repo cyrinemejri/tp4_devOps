@@ -27,7 +27,7 @@ pipeline {
 
         stage('Deploy with Ansible'){
             steps {
-                sh 'ansible-playbook -i inventory.ini playbook.yaml'
+                sh 'ansible-playbook -i terraform-ec2/inventory.ini terraform-ec2/playbook.yaml'
             }
         }
     }
