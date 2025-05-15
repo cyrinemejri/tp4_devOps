@@ -28,8 +28,6 @@ pipeline {
         stage('Deploy with Ansible'){
             steps {
                 sh 'pwd && ls -l'
-                sh 'cd terraform-ec2'
-                sh 'pwd && ls -l'
                 sh 'ansible-playbook -i inventory.ini playbook.yaml'
             }
         }
