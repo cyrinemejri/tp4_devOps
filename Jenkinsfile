@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy with Ansible'){
             steps {
                 sh 'pwd && ls -l'
-                sh 'sudo chmod 777 deployer-key.pem'
+                sh 'chmod 777 deployer-key.pem'
                 sh 'ansible-playbook -i inventory.ini playbook.yaml --ssh-common-args="-o StrictHostKeyChecking=no"'
             }
         }
