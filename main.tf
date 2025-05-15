@@ -12,7 +12,7 @@ resource "tls_private_key" "deployer_key" {
 resource "local_file" "private_key_pem" {
   content              = tls_private_key.deployer_key.private_key_pem
   filename             = "${path.module}/deployer-key.pem"
-  file_permission      = "0777"
+  file_permission      = "0400"
   directory_permission = "0700"
 }
 
