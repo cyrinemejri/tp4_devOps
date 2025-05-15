@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy with Ansible'){
             steps {
                 sh 'pwd && ls -l'
-                sh 'chmod 0777 deployer-key.pem'
+                sh 'sudo chmod 777 deployer-key.pem'
                 sh 'ansible-playbook -i inventory.ini playbook.yaml'
             }
         }
