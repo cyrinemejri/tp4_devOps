@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh 'pwd && ls -l'
                 sh 'sudo chmod 777 deployer-key.pem'
-                sh 'ansible-playbook -i inventory.ini playbook.yaml'
+                sh 'ansible-playbook -i inventory.ini playbook.yaml --ssh-common-args="-o StrictHostKeyChecking=no"'
             }
         }
     }
